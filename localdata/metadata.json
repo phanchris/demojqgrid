@@ -1,0 +1,82 @@
+[
+  {
+    "ProductId": "001",
+    "Name": "Iphone 4",
+    "Type": "Mobile",
+    "Price": "4",
+    "Date": "12/02/2016",
+    "Description": "this is the smart phone"
+  },
+  {
+    "ProductId": "002",
+    "Name": "Sam sung",
+    "Type": "Mobile",
+    "Price": "6.5",
+    "Date": "13/06/2016",
+    "Description": "this is the smart phone"
+  },
+  {
+    "ProductId": "003",
+    "Name": "Xiaomi Note 5",
+    "Type": "TV",
+    "Price": "6",
+    "Date": "21/08/2016",
+    "Description": "this is the smart phone"
+  },
+  {
+    "ProductId": "004",
+    "Name": "Black berry Priv",
+    "Type": "Mobile",
+    "Price": "11",
+    "Date": "01/08/2016",
+    "Description": "OS Black berry 10"
+  },
+  {
+    "ProductId": "005",
+    "Name": "Sam sung galaxy S7",
+    "Type": "Mobile",
+    "Price": "189",
+    "Date": "03/06/2015",
+    "Description": "Make in Korea"
+  },
+  {
+    "ProductId": "006",
+    "Name": "Mobile-Star",
+    "Type": "Mobile",
+    "Price": "121",
+    "Date": "21/05/2014",
+    "Description": "Made in chine"
+  },
+  {
+    "ProductId": "007",
+    "Name": "Lenovo-A700A",
+    "Type": "Mobile",
+    "Price": "98",
+    "Date": "01/05/2015",
+    "Description": "New smart phone with screen 5.5 inch"
+  },
+  {
+    "ProductId": "008",
+    "Name": "Xiaomi MacBook Air",
+    "Type": "Laptop",
+    "Price": "12",
+    "Date": "13/07/2016",
+    "Description": "Similar Mac pro..."
+  },
+  {
+    "ProductId": "009",
+    "Name": "IPhone 6S",
+    "Type": "Mobile",
+    "Price": "16",
+    "Date": "01/12/2015",
+    "Description": "this is the smart phone"
+  },
+  {
+    "ProductId": "010",
+    "Name": "Bphone",
+    "Type": "Mobile",
+    "Price": "9",
+    "Date": "01/08/2015",
+    "Description": "New smart phone. This is the first mobile was made in VietNam"
+  }
+]

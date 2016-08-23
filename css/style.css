@@ -1,0 +1,17 @@
+.addButton{
+  padding: 10px;
+  font-size: 20px;
+}
+#list, #pager, .ui-jqgrid-hbox{
+  font-size: 18px;
+}
+.ui-jqgrid-hbox{
+  margin-bottom: 10px;
+}
+.ui-jqgrid-sortable{
+  padding-bottom: 10px;
+}
+.ui-jqdialog .ui-jqdialog-title{
+  margin: 0px;
+  font-size: 12px;
+}
