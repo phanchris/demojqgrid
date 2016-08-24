@@ -1,16 +1,18 @@
 [
   {
+    "ProductId": "003",
     "No":"1",
-    "Item":"1fwfwfwf2",
-    "Qty":"2ưefewfwf12",
-    "Unit":"12ưfewef12",
-    "Line Total":"fefwf21"
+    "Item":"2",
+    "Qty":"909",
+    "Unit":"hhhhhh",
+    "Line Total":"3333"
   },
   {
+    "ProductId": "001",
     "No":"2",
-    "Item":"1wfwf231323",
-    "Qty":"3wfwfwfw43",
-    "Unit":"554fwfwfwfwf",
-    "Line Total":"65ưwfwfwfw4656"
+    "Item":"1",
+    "Qty":"4",
+    "Unit":"2svvd",
+    "Line Total":"5565"
   }
 ]
