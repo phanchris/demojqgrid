@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>JqGrid</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css" href="css/redmond/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" href="css/ui.jqgrid.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -14,26 +15,33 @@
     <!-- <link rel="stylesheet" type="text/css" href="css/tether.css" /> -->
 
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <!-- use for sortable and resizeable -->
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script type="text/javascript" src="js/jquery.jqGrid.min.js"></script>
     <script type="text/javascript" src="js/i18n/grid.locale-en.js"></script>
     <script type="text/javascript" src="customjs/customjqgrid.js"></script>
-    <script src="js/src/grid.loader.js" type="text/javascript"></script>
-  </head>
-  <body>
-    <table id="list">
+    <script type="text/javascript" src="js/src/grid.loader.js"></script>
+    <script type="text/javascript" src="js/src/grid.subgrid.js"></script>
+</head>
 
-    </table>
-    <div id="pager">
+<body>
+    <div>
+        <table id="list">
+        </table>
+        <div id="pager">
 
+        </div>
+        <div class="addButton">
+            <span id="add"> Add new row</span>
+            <span id="edit"> Edit select row</span>
+            <span id="delete"> Delete row select </span>
+            <span id="search"> Search </span>
+        </div>
     </div>
-    <div class="addButton">
-      <button id="add"> Add new row</button>
-      <button id="edit"> Edit select row</button>
-      <button id="delete"> Delete row select </button>
-      <button id="search"> Search </button>
-    </div>
+
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script> -->
-  </body>
+</body>
+
 </html>
