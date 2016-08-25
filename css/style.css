@@ -3,9 +3,14 @@ html,body {
     padding: 0;
     font-size: 20px;
 }
-#Type, #ProductId, #Name, #Price, #Date{
+#Type, #ProductId, #Name, #Price{
   width: 350px;
   height: 20px;
+}
+#Date{
+  width: 200px;
+  height: 20px;
+  margin-right: 5px;
 }
 #Description{
   width: 350px;
@@ -31,7 +36,13 @@ html,body {
   background-color: #405d73;
   color: #FFFFFF;
 }
-/* custom jqgrid*/
+.checkErrID, .checkErrName, .checkErrPrice, .checkErrType{
+  text-align: center;
+  color: red;
+  font-size: 18px;
+}
+
+/* =========================================custom jqgrid*/
 .ui-jqgrid-hbox{
   margin-bottom: 10px;
 }

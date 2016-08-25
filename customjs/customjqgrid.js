@@ -40,9 +40,29 @@ $(function() {
                     name: 'Date',
                     index: 'Date',
                     width: 80,
-                    formatter: 'date',
-                    edittype: 'date',
                     editable: true,
+                    // formatter: 'date',
+                    formatoptions: {
+                        // srcformat:"Y-m-d",
+                        newformat: "d/m/Y"
+                    },
+                    editoptions: {
+                        dataInit: function(elem) {
+                            setTimeout(function() {
+                                $(elem).datepicker({
+                                    dateFormat: "dd/m/yy",
+                                    showOn: "button",
+                                    changeYear: true,
+                                    changeMonth: true,
+                                    showButtonPanel: true,
+                                    showWeek: true
+                                });
+                            }, 50);
+
+
+                        },
+                        size: 14
+                    },
                     align: 'right'
                 }, {
                     name: 'Description',
@@ -100,7 +120,7 @@ $(function() {
         var checkPrice = '';
 
         jQuery("#list").jqGrid("editGridRow", "new", {
-            height: 370,
+            height: "auto",
             reloadAfterSubmit: false
         });
         jQuery('#sData').hide();
@@ -109,37 +129,70 @@ $(function() {
 
         $('#ProductId').focusout(function() {
             checkID = $('#ProductId').val();
-            if (!checkPrice || !checkPrice || !checkName || !checkType) {
+
+            if (!checkID) {
+              //if null add row..
+              $("<tr><td></td><td>Field ID is required</td></tr>" ).addClass("checkErrID").appendTo( "#TblGrid_list" );
+            }else {// else remove row
+              jQuery('.checkErrID').remove();
+              //check value
+              if (!checkPrice || !checkName || !checkType) {
                 jQuery('#sData').hide();
-            } else {
+              } else {
                 jQuery('#sData').show();
+              }
             }
         });
         $('#Name').focusout(function() {
             checkName = $('#Name').val();
-            if (!checkPrice || !checkPrice || !checkName || !checkType) {
+
+            if (!checkName) {
+              //if null add row..
+              $("<tr><td></td><td>Field Name is required</td></tr>" ).addClass("checkErrName").appendTo( "#TblGrid_list" );
+            }else {
+              jQuery('.checkErrName').remove();
+              if (!checkID || !checkPrice || !checkType) {
                 jQuery('#sData').hide();
-            } else {
+              } else {
                 jQuery('#sData').show();
-            }
-        });
-        $('#Type').focusout(function() {
-            checkType = $('#Type').val();
-            if (!checkPrice || !checkPrice || !checkName || !checkType) {
-                jQuery('#sData').hide();
-            } else {
-                jQuery('#sData').show();
-            }
-        });
-        $('#Price').focusout(function() {
-            checkPrice = $('#Price').val();
-            if (!checkPrice || !checkPrice || !checkName || !checkType) {
-                jQuery('#sData').hide();
-            } else {
-                jQuery('#sData').show();
+              }
             }
         });
 
+        //Type
+        $('#Type').focusout(function() {
+            checkType = $('#Type').val();
+
+            if (!checkType) {
+              //if null add row..
+              $("<tr><td></td><td>Field Type is required</td></tr>" ).addClass("checkErrType").appendTo( "#TblGrid_list" );
+            }else {
+              jQuery('.checkErrType').remove();
+              if (!checkID || !checkPrice || !checkName) {
+                jQuery('#sData').hide();
+              } else {
+                jQuery('#sData').show();
+              }
+            }
+        });
+
+        //Price
+        $('#Price').focusout(function() {
+            checkPrice = $('#Price').val();
+            if (!checkPrice) {
+              //if null add row..
+              $("<tr><td></td><td>Field Price is required</td></tr>" ).addClass("checkErrPrice").appendTo( "#TblGrid_list" );
+            }else {
+              jQuery('.checkErrPrice').remove();
+              if (!checkID || !checkPrice || !checkName || !checkType) {
+                jQuery('#sData').hide();
+              } else {
+                jQuery('#sData').show();
+              }
+            }
+        });
+
+        // close form
         $('#sData').bind("click", function() {
             $('#editmodlist').hide();
         });
@@ -165,7 +218,7 @@ $(function() {
     $("#delete").click(function() {
         var newID2 = jQuery("#list").jqGrid('getGridParam', 'selrow');
         if (newID2 != null) {
-            jQuery('#list').jqGrid('delRowData', newID2);
+            jQuery('#list').jqGrid('delGridRow', newID2);
         } else {
             alert("please select one row");
         }
