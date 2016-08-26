@@ -86,16 +86,28 @@ $(function() {
             autowidth: true,
             sortable: true,
             editurl: "clientArray",
-            subGrid: true,
+            // subGrid: true,
             // subGridUrl: "../localdata/subdata.json",
-            subGridModel: [{
-                name: ['No', 'Item', 'Qty', 'Unit', 'Line Total'],
-                width: [55, 200, 80, 80, 80],
-                params: ['ProductId']
-            }],
-            ondblClickRow: function(id) {
-                alert("You are double click row with id: " + id);
-            },
+            // subGridModel: [{
+            //     name: ['No', 'Item', 'Qty', 'Unit', 'Line Total'],
+            //     width: [55, 200, 80, 80, 80],
+            //     params: ['ProductId']
+            // }],
+            ondblClickRow: function(rowid) {
+                jQuery("#list").jqGrid("editGridRow", rowid, {
+                  height: "auto",
+                  width: "auto",
+                      beforeShowForm: function() {
+                          alert("Get id: "+rowid);
+                      }
+                });
+                jQuery('#ProductId').attr("disabled", true);
+                jQuery('#ProductId').css("cursor", "not-allowed");
+                $('#sData').bind("click", function() {
+                    $('#editmodlist').hide();
+                });
+            }
+
             // cellEdit: true
         })
         .navGrid('#pager', {
@@ -118,11 +130,16 @@ $(function() {
         var checkName = '';
         var checkType = '';
         var checkPrice = '';
-
         jQuery("#list").jqGrid("editGridRow", "new", {
             height: "auto",
-            reloadAfterSubmit: false
+            reloadAfterSubmit: false,
+            // afterSubmit: function(response, postdata) {
+            //   alert("dadadsa",response);
+            //   return true;
+            // }
         });
+        jQuery('#Date').attr("disabled", true);
+        // jQuery('#Date').css("cursor", "not-allowed");
         jQuery('#sData').hide();
 
         //check value if null
@@ -131,31 +148,31 @@ $(function() {
             checkID = $('#ProductId').val();
 
             if (!checkID) {
-              //if null add row..
-              $("<tr><td></td><td>Field ID is required</td></tr>" ).addClass("checkErrID").appendTo( "#TblGrid_list" );
-            }else {// else remove row
-              jQuery('.checkErrID').remove();
-              //check value
-              if (!checkPrice || !checkName || !checkType) {
-                jQuery('#sData').hide();
-              } else {
-                jQuery('#sData').show();
-              }
+                //if null add row..
+                $("<tr><td></td><td>Field ID is required</td></tr>").addClass("checkErrID").appendTo("#TblGrid_list");
+            } else { // else remove row
+                jQuery('.checkErrID').remove();
+                //check value
+                if (!checkPrice || !checkName || !checkType) {
+                    jQuery('#sData').hide();
+                } else {
+                    jQuery('#sData').show();
+                }
             }
         });
         $('#Name').focusout(function() {
             checkName = $('#Name').val();
 
             if (!checkName) {
-              //if null add row..
-              $("<tr><td></td><td>Field Name is required</td></tr>" ).addClass("checkErrName").appendTo( "#TblGrid_list" );
-            }else {
-              jQuery('.checkErrName').remove();
-              if (!checkID || !checkPrice || !checkType) {
-                jQuery('#sData').hide();
-              } else {
-                jQuery('#sData').show();
-              }
+                //if null add row..
+                $("<tr><td></td><td>Field Name is required</td></tr>").addClass("checkErrName").appendTo("#TblGrid_list");
+            } else {
+                jQuery('.checkErrName').remove();
+                if (!checkID || !checkPrice || !checkType) {
+                    jQuery('#sData').hide();
+                } else {
+                    jQuery('#sData').show();
+                }
             }
         });
 
@@ -164,15 +181,15 @@ $(function() {
             checkType = $('#Type').val();
 
             if (!checkType) {
-              //if null add row..
-              $("<tr><td></td><td>Field Type is required</td></tr>" ).addClass("checkErrType").appendTo( "#TblGrid_list" );
-            }else {
-              jQuery('.checkErrType').remove();
-              if (!checkID || !checkPrice || !checkName) {
-                jQuery('#sData').hide();
-              } else {
-                jQuery('#sData').show();
-              }
+                //if null add row..
+                $("<tr><td></td><td>Field Type is required</td></tr>").addClass("checkErrType").appendTo("#TblGrid_list");
+            } else {
+                jQuery('.checkErrType').remove();
+                if (!checkID || !checkPrice || !checkName) {
+                    jQuery('#sData').hide();
+                } else {
+                    jQuery('#sData').show();
+                }
             }
         });
 
@@ -180,15 +197,15 @@ $(function() {
         $('#Price').focusout(function() {
             checkPrice = $('#Price').val();
             if (!checkPrice) {
-              //if null add row..
-              $("<tr><td></td><td>Field Price is required</td></tr>" ).addClass("checkErrPrice").appendTo( "#TblGrid_list" );
-            }else {
-              jQuery('.checkErrPrice').remove();
-              if (!checkID || !checkPrice || !checkName || !checkType) {
-                jQuery('#sData').hide();
-              } else {
-                jQuery('#sData').show();
-              }
+                //if null add row..
+                $("<tr><td></td><td>Field Price is required</td></tr>").addClass("checkErrPrice").appendTo("#TblGrid_list");
+            } else {
+                jQuery('.checkErrPrice').remove();
+                if (!checkID || !checkPrice || !checkName || !checkType) {
+                    jQuery('#sData').hide();
+                } else {
+                    jQuery('#sData').show();
+                }
             }
         });
 

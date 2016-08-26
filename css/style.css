@@ -4,13 +4,14 @@ html,body {
     font-size: 20px;
 }
 #Type, #ProductId, #Name, #Price{
-  width: 350px;
+  min-width: 350px;
   height: 20px;
 }
 #Date{
   width: 200px;
   height: 20px;
   margin-right: 5px;
+  cursor: not-allowed;
 }
 #Description{
   width: 350px;
