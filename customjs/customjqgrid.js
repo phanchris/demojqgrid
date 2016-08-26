@@ -95,11 +95,11 @@ $(function() {
             // }],
             ondblClickRow: function(rowid) {
                 jQuery("#list").jqGrid("editGridRow", rowid, {
-                  height: "auto",
-                  width: "auto",
-                      beforeShowForm: function() {
-                          alert("Get id: "+rowid);
-                      }
+                    height: "auto",
+                    width: "auto",
+                    beforeShowForm: function() {
+                        alert("Get id: " + rowid);
+                    }
                 });
                 jQuery('#ProductId').attr("disabled", true);
                 jQuery('#ProductId').css("cursor", "not-allowed");
@@ -133,10 +133,19 @@ $(function() {
         jQuery("#list").jqGrid("editGridRow", "new", {
             height: "auto",
             reloadAfterSubmit: false,
-            // afterSubmit: function(response, postdata) {
-            //   alert("dadadsa",response);
-            //   return true;
-            // }
+            // beforeSubmit: function(postdata, formid) { 
+            //         // postdata.something = 'somevalue';
+            //         // alert(postdata.something);
+            //         if (checkID) {
+            //           $("<tr><td></td><td>Field ID is required</td></tr>").addClass("checkErrID").appendTo("#TblGrid_list");
+            //           // alert("fjakfjakfjkasf");
+            //           return [false, ''];
+            //         }
+            //     }
+                // afterSubmit: function(response, postdata) {
+                //   alert("dadadsa",response);
+                //   return true;
+                // }
         });
         jQuery('#Date').attr("disabled", true);
         // jQuery('#Date').css("cursor", "not-allowed");
