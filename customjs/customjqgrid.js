@@ -133,6 +133,7 @@ $(function() {
         jQuery("#list").jqGrid("editGridRow", "new", {
             height: "auto",
             reloadAfterSubmit: false,
+            closeAfterAdd: true
             // afterSubmit: function(response, postdata) {
             //   alert("dadadsa",response);
             //   return true;
@@ -210,9 +211,9 @@ $(function() {
         });
 
         // close form
-        $('#sData').bind("click", function() {
-            $('#editmodlist').hide();
-        });
+        // $('#sData').bind("click", function() {
+        //     $('#editmodlist').hide();
+        // });
         // var text = $('.ui-sortable tr:nth-child(2) td:nth-child(2)').text();
         // alert(text);
     });
@@ -220,7 +221,7 @@ $(function() {
     $("#edit").click(function() {
         var newID = jQuery("#list").jqGrid("getGridParam", "selrow");
         if (newID != null) {
-            jQuery("#list").jqGrid("editGridRow", newID);
+            jQuery("#list").jqGrid("editGridRow", newID, {closeAfterEdit: true});
             jQuery('#ProductId').attr("disabled", true);
             jQuery('#ProductId').css("cursor", "not-allowed");
         } else {
@@ -228,9 +229,9 @@ $(function() {
         }
 
 
-        $('#sData').bind("click", function() {
-            $('#editmodlist').hide();
-        });
+        // $('#sData').bind("click", function() {
+        //     $('#editmodlist').hide();
+        // });
     });
     $("#delete").click(function() {
         var newID2 = jQuery("#list").jqGrid('getGridParam', 'selrow');
@@ -242,7 +243,8 @@ $(function() {
     });
     $("#search").click(function() {
         jQuery("#list").jqGrid("searchGrid", {
-            sopt: ['cn', 'bw', 'eq', 'ne', 'lt', 'gt', 'ew']
+            sopt: ['cn', 'bw', 'eq', 'ne', 'lt', 'gt', 'ew'],
+            closeAfterSearch: true
         });
     })
     var myData = [{
