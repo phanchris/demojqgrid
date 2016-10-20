@@ -69,3 +69,33 @@ html,body {
     top: 20% !important;
     left: 35% !important;
 }
+
+
+/* Demo how to page*/
+.full_screen_demo{
+  position: relative;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+}
+body, html{
+  height: 100%;
+  margin: 0;
+}
+.page_1{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+.sub_page_1{
+  background-color: #111;
+	color: #fff;
+	padding: 18px;
+  opacity: 1;
+	font-size: 25px;
+	letter-spacing: 5px;
+}
